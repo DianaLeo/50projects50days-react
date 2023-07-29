@@ -7,7 +7,7 @@ import AnimatedNavigation from './pages/Projects/AnimatedNavigation/AnimatedNavi
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/50projects50days-react">
       <Routes>
         <Route path='/' exact element={<ProjectsNav />}>
           <Route index element={<AnimatedCountdown />}></Route>
