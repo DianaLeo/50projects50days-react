@@ -1,0 +1,21 @@
+.projectsNav {
+  padding: 20px;
+  background-color: rgb(174, 186, 211);
+  width: 30vw;
+  height:100vh;
+  position: fixed;
+  left:0;
+  font-size: calc(10px + 1.7vmin);
+  color: white;
+  overflow-y: scroll;
+  white-space: nowrap;
+}
+
+.projectsNav ul{
+  padding: 0;
+  list-style: none;
+}
+
+.projectsNav ul li{
+  padding-bottom:10px;
+}

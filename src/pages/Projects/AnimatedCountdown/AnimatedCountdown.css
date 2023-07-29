@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
+.AnimatedCountdown_container{
+    width:70vw;
+    height:100vh;
+    background-color: darkseagreen;
+    position: fixed;
+    right:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.AnimatedCountdown_container #countDownContainer{
+    position: relative;
+    width:150px;
+    height:150px;
+    border-radius: 25%;
+    color: whitesmoke;
+    background-color: seagreen;
+    transform-origin: center center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2) inset;
+}
+
+#countDownContainer.out{
+    animation: shrink 0.3s ease 0s 1;
+}
+.AnimatedCountdown_container #count{
+    position: absolute;
+    top: 10%;
+    left:25%;
+    width: 50%;
+    height: 50%;
+    transform-origin: 50% 90%;
+    font-size: 3rem;
+    text-align: center;
+    font-family:'Times New Roman', Times, serif;
+}
+#count.in{
+    animation: countDown 0.9s ease;
+}
+#countDownContainer p{
+    position: absolute;
+    top:55%;
+    width: 150px;
+    height:25%;
+    text-align: center;
+    padding:3px;
+    font-family: Roboto;
+    font-size: 1.5rem;
+    background-color: rgb(15, 63, 47);
+}
+.AnimatedCountdown_container #goContainer{
+    position: absolute;
+    width:150px;
+    height:150px;
+    border-radius: 25%;
+    color: whitesmoke;
+    background-color: rgb(15, 63, 47);
+}
+
+#goContainer.in{
+    animation: expand 0.2s ease 0.2s 1;
+    animation-fill-mode: backwards;
+}
+
+#goContainer p{
+    position: absolute;
+    top:10%;
+    width: 150px;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 2.5rem;
+}
+.AnimatedCountdown_container button{
+    position: absolute;
+    top:50%;
+    width: 70%;
+    height:20%;
+    left:15%;
+    color: whitesmoke;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 1.1rem;
+    background-color: rgb(85, 129, 114);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px rgb(9, 40, 28);
+}
+
+@keyframes countDown {
+    0% {transform:rotate(0deg);}
+    10% {transform:rotate(10deg);}
+    50% {transform:rotate(-370deg);}
+    59% {transform:rotate(-350deg);}
+    60% {transform:rotate(-360deg);}
+    100% {transform:rotate(-360deg);}
+}
+
+@keyframes shrink {
+    0% {transform:scale(1,1);}
+    10% {transform:scale(1.2,1.2);}
+    100% {transform:scale(0,0);}
+}
+
+@keyframes expand {
+    0% {transform:scale(0,0);}
+    90% {transform:scale(1.2,1.2);}
+    100% {transform:scale(1,1);}
+}
