@@ -1,0 +1,44 @@
+
+.AutoTextEffect_container{
+    width:70vw;
+    height:100vh;
+    position: fixed;
+    right:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: cornflowerblue;
+}
+
+.AutoTextEffect_container #textContainer{
+    width: 90%;
+    height: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.AutoTextEffect_container #speedContainer{
+    width: 120px;
+    height: 50px;
+    background-color: rgb(82, 115, 176);
+    position: absolute;
+    bottom: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.AutoTextEffect_container span{
+    white-space: pre;
+}
+
+.AutoTextEffect_container #number{
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    background-color: rgb(199, 230, 243);
+    overflow-y: scroll;
+    border: none;
+}

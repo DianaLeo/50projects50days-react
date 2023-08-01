@@ -4,6 +4,7 @@ import './App.css';
 import ProjectsNav from './pages/ProjectsNav';
 import AnimatedCountdown from './pages/Projects/AnimatedCountdown/AnimatedCountdown';
 import AnimatedNavigation from './pages/Projects/AnimatedNavigation/AnimatedNavigation';
+import AutoTextEffect from './pages/Projects/AutoTextEffect/AutoTextEffect';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         <Route path='/' exact element={<ProjectsNav />}>
           <Route index element={<AnimatedCountdown />}></Route>
           <Route path='/AnimatedNavigation' element={<AnimatedNavigation />}></Route>
-          <Route path='/AutoTextEffect' element={<AnimatedNavigation />}></Route>
+          <Route path='/AutoTextEffect' element={<AutoTextEffect />}></Route>
         </Route>
       </Routes>
     </BrowserRouter>
