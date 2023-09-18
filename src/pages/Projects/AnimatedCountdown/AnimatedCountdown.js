@@ -1,5 +1,6 @@
 import './AnimatedCountdown.css';
 import { useRef, useEffect } from 'react';
+
 //Use useEffect to solve ref.current = undefined/null
 function AnimatedCountdown() {
     const div_count = useRef(null);
@@ -11,12 +12,10 @@ function AnimatedCountdown() {
         return () => {
             console.log('return:', div_count.current);
         };
-
     }, []);
 
     const myfunction = () => {
         let count = 5;
-
         div_count.current.textContent = count;
         div_count.current.classList.add('in');
         div_goContainer.current.hidden = true;
@@ -24,17 +23,13 @@ function AnimatedCountdown() {
         div_countDownContainer.current.classList.remove('out');
 
         let c = 0;//async timer to remove counter animation
-
-
         setTimeout(() => {
             c += 1;
-            if (div_count.current != null) {
-                div_count.current.classList.remove('in');
-            } else { return }
+            if (div_count.current === null) { return }
+            div_count.current.classList.remove('in');
             const myInterval2 = setInterval(() => {
-                if (div_count.current != null) {
-                    div_count.current.classList.remove('in');
-                } else { return }
+                if (div_count.current === null) { return }
+                div_count.current.classList.remove('in');
                 if (c == count + 1) {
                     clearInterval(myInterval2);
                     return;
@@ -54,37 +49,31 @@ function AnimatedCountdown() {
                     div_goContainer.current.classList.add('in');
                     clearTimeout(timer);
                     return;
-                } else {
-                    console.log('now count:', count);
-                    if (div_count.current != null) {
-                        div_count.current.textContent = count;
-                        div_count.current.classList.add('in');
-                    } else {
-                        console.log('div_count.current is null!');
-                        clearTimeout(timer);
-                        return;
-                    }
-
                 }
+                console.log('now count:', count);
+                if (div_count.current === null) {
+                    console.log('div_count.current is null!');
+                    clearTimeout(timer);
+                    return;
+                } 
+                div_count.current.textContent = count;
+                div_count.current.classList.add('in');
                 addAnimation();
             }, 1000);
         }
-
     }
 
     return (
-        <>
-            <div className='AnimatedCountdown_container'>
-                <div ref={div_countDownContainer} id="countDownContainer">
-                    <div ref={div_count} id="count"></div>
-                    <p>Get Ready</p>
-                </div>
-                <div ref={div_goContainer} id="goContainer">
-                    <p>Go</p>
-                    <button onClick={myfunction}>Start again</button>
-                </div>
+        <div className='AnimatedCountdown_container'>
+            <div ref={div_countDownContainer} id="countDownContainer">
+                <div ref={div_count} id="count"></div>
+                <p>Get Ready</p>
             </div>
-        </>
+            <div ref={div_goContainer} id="goContainer">
+                <p>Go</p>
+                <button onClick={myfunction}>Start again</button>
+            </div>
+        </div>
     )
 }
-export default AnimatedCountdown;
+export { AnimatedCountdown };

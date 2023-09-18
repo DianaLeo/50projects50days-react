@@ -1,17 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-
 .AnimatedCountdown_container{
-    width:70vw;
     height:100vh;
     background-color: darkseagreen;
-    position: fixed;
-    right:0;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.AnimatedCountdown_container #countDownContainer{
+
+#countDownContainer{
     position: relative;
     width:150px;
     height:150px;
@@ -25,7 +22,8 @@
 #countDownContainer.out{
     animation: shrink 0.3s ease 0s 1;
 }
-.AnimatedCountdown_container #count{
+
+#countDownContainer #count{
     position: absolute;
     top: 10%;
     left:25%;
@@ -36,7 +34,7 @@
     text-align: center;
     font-family:'Times New Roman', Times, serif;
 }
-#count.in{
+#countDownContainer #count.in{
     animation: countDown 0.9s ease;
 }
 #countDownContainer p{
@@ -49,8 +47,9 @@
     font-family: Roboto;
     font-size: 1.5rem;
     background-color: rgb(15, 63, 47);
-}
-.AnimatedCountdown_container #goContainer{
+} 
+
+#goContainer{
     position: absolute;
     width:150px;
     height:150px;
@@ -72,7 +71,7 @@
     font-family: Roboto;
     font-size: 2.5rem;
 }
-.AnimatedCountdown_container button{
+#goContainer button{
     position: absolute;
     top:50%;
     width: 70%;

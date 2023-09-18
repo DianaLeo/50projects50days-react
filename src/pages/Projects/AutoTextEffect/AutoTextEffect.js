@@ -51,4 +51,4 @@ function AutoTextEffect() {
     )
 }
 
-export default AutoTextEffect;
+export {AutoTextEffect};

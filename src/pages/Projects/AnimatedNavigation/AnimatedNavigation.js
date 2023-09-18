@@ -30,4 +30,4 @@ function AnimatedNavigation() {
         </>
     )
 }
-export default AnimatedNavigation;
+export {AnimatedNavigation};
