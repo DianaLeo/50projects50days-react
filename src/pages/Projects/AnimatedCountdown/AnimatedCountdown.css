@@ -85,6 +85,7 @@
     border: none;
     border-radius: 10px;
     box-shadow: 3px 3px 3px rgb(9, 40, 28);
+    cursor: pointer;
 }
 
 @keyframes countDown {

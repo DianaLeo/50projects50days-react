@@ -1,0 +1,47 @@
+.goContainer{
+    position: absolute;
+    width:150px;
+    height:150px;
+    border-radius: 25%;
+    color: whitesmoke;
+    background-color: rgb(15, 63, 47);
+}
+
+.goContainer.in{
+    animation: expand 0.2s ease 0.2s 1;
+    animation-fill-mode: backwards;
+}
+.goContainer.hidden{
+    display: none;
+}
+
+.goContainer p{
+    position: absolute;
+    top:10%;
+    width: 150px;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 2.5rem;
+}
+.goContainer button{
+    position: absolute;
+    top:50%;
+    width: 70%;
+    height:20%;
+    left:15%;
+    color: whitesmoke;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 1.1rem;
+    background-color: rgb(85, 129, 114);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px rgb(9, 40, 28);
+    cursor: pointer;
+}
+
+@keyframes expand {
+    0% {transform:scale(0,0);}
+    90% {transform:scale(1.2,1.2);}
+    100% {transform:scale(1,1);}
+}

@@ -1,0 +1,30 @@
+import { useState, useEffect } from 'react';
+import './CountDownContainer.css';
+
+function CountDownContainer({ count }) {
+    const [animation, setAnimation] = useState({
+        containerAnimation: false,
+        countDivAnimation: true
+    });
+
+    useEffect(() => {
+        setAnimation(previous => { return { ...previous, countDivAnimation: true, containerAnimation: false } });
+        let timer1 = setTimeout(() => {
+            setAnimation(previous => { return { ...previous, countDivAnimation: false } });
+        }, 900);
+        if (count < 0) {
+            console.log(count);
+            setAnimation(previous => { return { ...previous, countDivAnimation: false, containerAnimation: true  } });
+        }
+        return () => {clearTimeout(timer1)};
+    }, [count]);
+    
+    return (
+        <div className={`countDownContainer${animation.containerAnimation ? " out" : ""}`}>
+            <div className={`count${animation.countDivAnimation ? " in" : ""}`}>{count<0?0:count}</div>
+            <p>Get Ready</p>
+        </div>
+    )
+}
+
+export { CountDownContainer }

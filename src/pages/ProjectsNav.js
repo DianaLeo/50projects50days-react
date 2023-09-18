@@ -31,9 +31,11 @@ function ProjectsNav() {
                     <li><Link to='/BackgroundSlider'>Background Slider</Link></li>
                 </ul>
             </nav>
-            <Outlet/> 
+            <div className={styles.main}>
+                <Outlet />
+            </div>
         </>
     )
 }
 
-export default ProjectsNav;
+export {ProjectsNav};
