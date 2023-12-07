@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './CountDownContainer.css';
+import { json } from 'react-router-dom';
 
 function CountDownContainer({ count }) {
     const [animation, setAnimation] = useState({
@@ -13,11 +14,10 @@ function CountDownContainer({ count }) {
             setAnimation(previous => { return { ...previous, countDivAnimation: false } });
         }, 900);
         if (count < 0) {
-            console.log(count);
             setAnimation(previous => { return { ...previous, countDivAnimation: false, containerAnimation: true  } });
         }
         return () => {clearTimeout(timer1)};
-    }, [count]);
+    }, [count]);//Dependency has to be 'count', otherwise memory leak. Because setAnimations also trigger re-renders.
     
     return (
         <div className={`countDownContainer${animation.containerAnimation ? " out" : ""}`}>
